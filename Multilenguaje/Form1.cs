@@ -19,9 +19,9 @@ namespace Multilenguaje
    
     public partial class frm1Main : Form
     {
-        // Declara variable ResManager para acceder a Resouce Manager. Para administrar recursos que proporcionan un acceso mas comodo a los recursos de la referencia cultural
+        // Declara variable ResManager para acceder a Resouce Manager. Administrar recursos que proporcionan un acceso mas comodo a los recursos de la referencia cultural
         ResourceManager ResManager;
-        // Declara variable para acceder a a una referencia cultural ( Configuracion Regional )
+        // Declara variable para acceder a a una referencia cultural
         CultureInfo CuInfo;
         public frm1Main()
         {
@@ -36,7 +36,7 @@ namespace Multilenguaje
             }
             else                                                //En English
             {
-                CuInfo = CultureInfo.CreateSpecificCulture("EN-US");     //create culture for english
+                CuInfo = CultureInfo.CreateSpecificCulture("EN-US");     //Crea culture for english
             }
 
             this.abrirToolStripMenuItem.Text = ResManager.GetString("abrirToolStripMenuItem", CuInfo);
@@ -45,32 +45,37 @@ namespace Multilenguaje
             this.salirToolStripMenuItem.Text = ResManager.GetString("salirToolStripMenuItem", CuInfo);
             this.inglesToolStripMenuItem.Text = ResManager.GetString("inglesToolStripMenuItem", CuInfo);
             this.españolToolStripMenuItem.Text = ResManager.GetString("españolToolStripMenuItem", CuInfo);
+            this.archivoToolStripMenuItem.Text = ResManager.GetString("archivoToolStripMenuItem", CuInfo);
+            this.idiomaToolStripMenuItem.Text = ResManager.GetString("idiomaToolStripMenuItem", CuInfo);
+           
+            
         }
 
         private void frm1Main_Load(object sender, EventArgs e)
         {
-            españolToolStripMenuItem .Checked = false;    //default language is english
-            inglesToolStripMenuItem .Checked = true;  //Defecto Idioma Ingles
+            españolToolStripMenuItem .Checked = true;    //Leguaje por defecto español
+            inglesToolStripMenuItem .Checked = false;  
             ResManager = new ResourceManager("Multilenguaje.RecursosdeIdioma.Res", typeof(frm1Main).Assembly);
-            //switch to vietnamese
+            //Cambia el idioma al que se encuentra por defecto
             switch_language();
+            frm1Main.
 
-            this.abrirToolStripMenuItem.Text = ResManager.GetString("abrirToolStripMenuItem", CuInfo);       
+              
         }
 
         private void inglesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (inglesToolStripMenuItem.Checked == true)    //in Ingles, switch to default language
+            if (inglesToolStripMenuItem.Checked == true)    //Si en el Menu esta seleccionado Ingles
             {
                 españolToolStripMenuItem.Checked = false;
                 inglesToolStripMenuItem.Checked = true;        //default language
             }
-            else            //current language is not french, switch french
+            else            //Si en el Menu esta seleccionado Español  
             {
-                inglesToolStripMenuItem.Checked = true;
-                españolToolStripMenuItem.Checked = false;                
+                inglesToolStripMenuItem.Checked = false;
+                españolToolStripMenuItem.Checked = true;                
             }
-            //switch language
+            //Cambiar Lenguaje
             switch_language();
         }
 
@@ -83,8 +88,8 @@ namespace Multilenguaje
             }
             else            //current language is not french, switch french
             {
-                inglesToolStripMenuItem.Checked = true;
-                españolToolStripMenuItem.Checked = false;
+                inglesToolStripMenuItem.Checked = false;
+                españolToolStripMenuItem.Checked = true;
             }
             //switch language
             switch_language();

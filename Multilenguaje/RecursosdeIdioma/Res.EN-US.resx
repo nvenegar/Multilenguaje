@@ -132,7 +132,7 @@
   <data name="guardarToolStripMenuItem" xml:space="preserve">
     <value>Save</value>
   </data>
-  <data name="IdiomaToolStripMenuItem" xml:space="preserve">
+  <data name="idiomaToolStripMenuItem" xml:space="preserve">
     <value>Language</value>
   </data>
   <data name="inglesToolStripMenuItem" xml:space="preserve">
@@ -140,5 +140,8 @@
   </data>
   <data name="salirToolStripMenuItem" xml:space="preserve">
     <value>Exit</value>
+  </data>
+  <data name="frm1Main" xml:space="preserve">
+    <value>Multi-Language Application</value>
   </data>
 </root>

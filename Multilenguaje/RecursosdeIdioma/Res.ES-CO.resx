@@ -129,6 +129,9 @@
   <data name="españolToolStripMenuItem" xml:space="preserve">
     <value>Español</value>
   </data>
+  <data name="frm1Main" xml:space="preserve">
+    <value>Aplicacion Multilenguaje</value>
+  </data>
   <data name="guardarToolStripMenuItem" xml:space="preserve">
     <value>Guardar</value>
   </data>
