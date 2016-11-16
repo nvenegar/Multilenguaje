@@ -9,10 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Resources;
 using System.Globalization;
-
-
-
-
+using System.Threading;
 
 namespace Multilenguaje
 {
@@ -33,10 +30,12 @@ namespace Multilenguaje
             if (españolToolStripMenuItem .Checked == true)    //En español
             {
                 CuInfo = CultureInfo.CreateSpecificCulture("Es-CO");    //crea culture info para español
+                Thread.CurrentThread.CurrentUICulture = CuInfo;
             }
             else                                                //En English
             {
                 CuInfo = CultureInfo.CreateSpecificCulture("En-US");     //Crea culture for english
+                Thread.CurrentThread.CurrentUICulture = CuInfo;
             }
 
             this.abrirToolStripMenuItem.Text = ResManager.GetString("abrirToolStripMenuItem", CuInfo);
