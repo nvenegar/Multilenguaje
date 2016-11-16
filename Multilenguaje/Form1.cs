@@ -32,11 +32,11 @@ namespace Multilenguaje
         {
             if (españolToolStripMenuItem .Checked == true)    //En español
             {
-                CuInfo = CultureInfo.CreateSpecificCulture("ES-CO");    //crea culture info para español
+                CuInfo = CultureInfo.CreateSpecificCulture("Es-CO");    //crea culture info para español
             }
             else                                                //En English
             {
-                CuInfo = CultureInfo.CreateSpecificCulture("EN-US");     //Crea culture for english
+                CuInfo = CultureInfo.CreateSpecificCulture("En-US");     //Crea culture for english
             }
 
             this.abrirToolStripMenuItem.Text = ResManager.GetString("abrirToolStripMenuItem", CuInfo);
@@ -46,9 +46,7 @@ namespace Multilenguaje
             this.inglesToolStripMenuItem.Text = ResManager.GetString("inglesToolStripMenuItem", CuInfo);
             this.españolToolStripMenuItem.Text = ResManager.GetString("españolToolStripMenuItem", CuInfo);
             this.archivoToolStripMenuItem.Text = ResManager.GetString("archivoToolStripMenuItem", CuInfo);
-            this.idiomaToolStripMenuItem.Text = ResManager.GetString("idiomaToolStripMenuItem", CuInfo);
-           
-            
+            this.idiomaToolStripMenuItem.Text = ResManager.GetString("idiomaToolStripMenuItem", CuInfo);          
         }
 
         private void frm1Main_Load(object sender, EventArgs e)
@@ -57,14 +55,13 @@ namespace Multilenguaje
             inglesToolStripMenuItem .Checked = false;  
             ResManager = new ResourceManager("Multilenguaje.RecursosdeIdioma.Res", typeof(frm1Main).Assembly);
             //Cambia el idioma al que se encuentra por defecto
-            switch_language();
-            frm1Main.
-
-              
+            switch_language();            
         }
 
         private void inglesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            inglesToolStripMenuItem.Checked = true;
+
             if (inglesToolStripMenuItem.Checked == true)    //Si en el Menu esta seleccionado Ingles
             {
                 españolToolStripMenuItem.Checked = false;
@@ -81,10 +78,11 @@ namespace Multilenguaje
 
         private void españolToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (españolToolStripMenuItem.Checked == true)    //in Ingles, switch to default language
+            españolToolStripMenuItem.Checked = true;
+            if (españolToolStripMenuItem.Checked == true)    //Se se selecciona en el Menu Español
             {
                 españolToolStripMenuItem.Checked = true ;
-                inglesToolStripMenuItem.Checked = false;        //default language
+                inglesToolStripMenuItem.Checked = false;        //Se cambia la seleccion a Español
             }
             else            //current language is not french, switch french
             {
